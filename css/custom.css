@@ -48,10 +48,11 @@ ul {
     position: relative;
 }
 
-.submenu #carrito{
+.prueba{
     display: none;
 }
-.submenu:hover #carrito{
+
+.prueba2{
     display: block;
     position: absolute;
     right:0;
@@ -63,6 +64,26 @@ ul {
     min-height: 400px;
     min-width: 300px;
 }
+
+
+
+/* .submenu #carrito{
+    display: none;
+    
+} */
+
+/* .submenu:hover #carrito{
+    display: block;
+    position: absolute;
+    right:0;
+
+    top:100%;
+    z-index: 1;
+    background-color: white;
+    padding: 20px;
+    min-height: 400px;
+    min-width: 300px;
+} */
 .vacio {
     padding: 10px;
     background-color: crimson;

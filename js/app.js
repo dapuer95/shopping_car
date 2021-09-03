@@ -10,13 +10,6 @@ let articulosCarrito = [];
 
 cargarEventListeners();
 function cargarEventListeners(){
-    window.addEventListener('scroll', (e) => {
-        let y = e.clientY;
-        console.log(y);
-        if(y>= 150) {
-            mostrar();
-        }
-    });
     
     // Cuando agregas un curso presionando "Agregar al carrito"
     listaCursos.addEventListener('click', agregarCurso);

@@ -8,6 +8,7 @@ const vaciarCarritoBtn = document.querySelector('#vaciar-carrito');
 const listaCursos = document.querySelector('#lista-cursos');
 let articulosCarrito = [];
 
+
 cargarEventListeners();
 function cargarEventListeners(){
     
@@ -16,6 +17,10 @@ function cargarEventListeners(){
     
     //Elimina cursos del carrito
     carrito.addEventListener('click', eliminarCurso);
+
+    carrito.addEventListener("mouseleave", () => {
+        carrito.classList.remove("prueba2");
+    });
 
     //Muestra el carrito
     imgCarro.addEventListener('click', mostrar);
@@ -43,9 +48,15 @@ function mostrar() {
     carrito.classList.toggle('prueba2');
 }
 
+function scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    })
+  }
 
 function agregarCurso(e) {
-    // e.preventDefault();
+    e.preventDefault();
     if(e.target.classList.contains('agregar-carrito')){
         const cursoSeleccionado = e.target.parentElement.parentElement;
         leerDatosCurso(cursoSeleccionado);
@@ -53,7 +64,10 @@ function agregarCurso(e) {
     }
     // carrito.classList.toggle("prueba2");
     carrito.classList.add("prueba2");
+    scrollToTop();
 }
+
+
 
 // Eliminar un curso del carrito
 function eliminarCurso(e) {

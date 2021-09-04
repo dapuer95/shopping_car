@@ -4,4 +4,4 @@ This web application allows you to add courses to a shoppin car inside a learnin
 JavaScript concepts such as DOM navigation, array methods, localstorage, event listeners, creation of html elements are applied in the project.
 
  In the following link, you will find the car shopping app
- https://compassionate-aryabhata-9386c3.netlify.app/
+ https://silly-pike-2730bf.netlify.app/

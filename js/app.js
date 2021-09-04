@@ -6,6 +6,7 @@ const imgCarro = document.querySelector('#img-carrito');
 const contendorCarrrito = document.querySelector('#lista-carrito tbody');
 const vaciarCarritoBtn = document.querySelector('#vaciar-carrito');
 const listaCursos = document.querySelector('#lista-cursos');
+const rootElement = document.documentElement
 let articulosCarrito = [];
 
 
@@ -18,9 +19,7 @@ function cargarEventListeners(){
     //Elimina cursos del carrito
     carrito.addEventListener('click', eliminarCurso);
 
-    carrito.addEventListener("mouseleave", () => {
-        carrito.classList.remove("prueba2");
-    });
+    imgCarro.addEventListener('focus', (e) => console.log('fhj'));
 
     //Muestra el carrito
     imgCarro.addEventListener('click', mostrar);
@@ -46,10 +45,15 @@ function cargarEventListeners(){
 
 function mostrar() {
     carrito.classList.toggle('prueba2');
+    if(carrito.classList.contains('prueba2')){
+        imgCarro.src = 'img/cerrar_carro.png'
+    }else {
+        imgCarro.src = 'img/abrir_carro.png'
+    }
 }
 
 function scrollToTop() {
-    window.scrollTo({
+    rootElement.scrollTo({
       top: 0,
       behavior: "smooth"
     })
@@ -60,11 +64,16 @@ function agregarCurso(e) {
     if(e.target.classList.contains('agregar-carrito')){
         const cursoSeleccionado = e.target.parentElement.parentElement;
         leerDatosCurso(cursoSeleccionado);
+        carrito.classList.add("prueba2");
 
+        if(carrito.classList.contains('prueba2')){
+            imgCarro.src = 'img/cerrar_carro.png'
+        }else {
+            imgCarro.src = 'img/abrir_carro.png'
+        }
+        scrollToTop();
     }
-    // carrito.classList.toggle("prueba2");
-    carrito.classList.add("prueba2");
-    scrollToTop();
+    
 }
 
 
